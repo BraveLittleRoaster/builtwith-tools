@@ -59,10 +59,7 @@ def main():
         for _ in p.imap_unordered(get_targs, files):
             print(f"[+] Got {len(_.get('results'))} hosts for {_.get('csvfile')}")
             for host in _.get('results'):
-                try:
-                    outf.write(host)
-                except csv.Error:
-                    pass  # has null lines sometimes, just ignore them.
+                outf.write(host)
                 total += len(_.get('results'))
         print(f"[+] Done! Wrote a total of {total} hosts to {outfile}!")
 
