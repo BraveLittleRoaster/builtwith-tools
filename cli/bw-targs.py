@@ -58,6 +58,10 @@ def main():
             files.append(os.path.join(indir, file))
 
     p.imap_unordered(clean_csv, files)
+    p.close()
+    p.join()
+
+    p = Pool()
 
     total = 0
     with open(outfile, 'w') as outf:
