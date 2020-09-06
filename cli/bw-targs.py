@@ -17,13 +17,6 @@ def clean_csv(csvfile):
                 fout.writelines(data[1:])
             fout.close()
 
-    fi = open(csvfile, 'rb')
-    data = fi.read()
-    fi.close()
-    fo = open(csvfile, 'wb')
-    fo.write(data.replace('\x00', ''))
-    fo.close()
-
     print(f"[-] Done!")
 
 
