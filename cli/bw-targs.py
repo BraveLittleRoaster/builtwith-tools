@@ -17,8 +17,8 @@ def clean_csv(csvfile):
                 fout.writelines(data[1:])
             fout.close()
 
-
     print(f"[-] Done!")
+
 
 def get_targs(csvfile):
 
@@ -56,6 +56,7 @@ def main():
                 total += len(_.get('results'))
         print(f"[+] Done! Wrote a total of {total} hosts to {outfile}!")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
 
     main()
